@@ -11,6 +11,10 @@
 		5787CC842901C29E0097AA14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC832901C29E0097AA14 /* ContentView.swift */; };
 		5787CC862901C29F0097AA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5787CC852901C29F0097AA14 /* Assets.xcassets */; };
 		5787CC8A2901C29F0097AA14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5787CC892901C29F0097AA14 /* Preview Assets.xcassets */; };
+		5787CC952901C3A20097AA14 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC942901C3A20097AA14 /* LoginView.swift */; };
+		5787CC972901C4170097AA14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC962901C4170097AA14 /* User.swift */; };
+		5787CC992901C7C10097AA14 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC982901C7C10097AA14 /* HomeScreenView.swift */; };
+		5787CC9B2901C7FB0097AA14 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC9A2901C7FB0097AA14 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		5787CC852901C29F0097AA14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5787CC872901C29F0097AA14 /* TellStory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TellStory.entitlements; sourceTree = "<group>"; };
 		5787CC892901C29F0097AA14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5787CC942901C3A20097AA14 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5787CC962901C4170097AA14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5787CC982901C7C10097AA14 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		5787CC9A2901C7FB0097AA14 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			children = (
 				5787CC812901C29E0097AA14 /* TellStoryApp.swift */,
 				5787CC832901C29E0097AA14 /* ContentView.swift */,
+				5787CC932901C3910097AA14 /* viewModels */,
+				5787CC922901C3840097AA14 /* components */,
+				5787CC912901C35F0097AA14 /* models */,
+				5787CC902901C3560097AA14 /* screens */,
 				5787CC852901C29F0097AA14 /* Assets.xcassets */,
 				5787CC872901C29F0097AA14 /* TellStory.entitlements */,
 				5787CC882901C29F0097AA14 /* Preview Content */,
@@ -67,6 +79,38 @@
 				5787CC892901C29F0097AA14 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5787CC902901C3560097AA14 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				5787CC942901C3A20097AA14 /* LoginView.swift */,
+				5787CC982901C7C10097AA14 /* HomeScreenView.swift */,
+				5787CC9A2901C7FB0097AA14 /* RegisterView.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		5787CC912901C35F0097AA14 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5787CC962901C4170097AA14 /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5787CC922901C3840097AA14 /* components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		5787CC932901C3910097AA14 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5787CC972901C4170097AA14 /* User.swift in Sources */,
+				5787CC952901C3A20097AA14 /* LoginView.swift in Sources */,
+				5787CC992901C7C10097AA14 /* HomeScreenView.swift in Sources */,
+				5787CC9B2901C7FB0097AA14 /* RegisterView.swift in Sources */,
 				5787CC842901C29E0097AA14 /* ContentView.swift in Sources */,
 				5787CC822901C29E0097AA14 /* TellStoryApp.swift in Sources */,
 			);
@@ -277,7 +325,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -313,7 +361,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
