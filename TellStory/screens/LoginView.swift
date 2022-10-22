@@ -8,11 +8,71 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State private var username = ""
+    @State private var password = ""
+    
     var body: some View {
-        VStack {
-            Text("Tell Story")
-            FormBox()
-        }.padding(.all, 36)
+        NavigationView{
+            VStack {
+                Text("TellStory")
+                    .font(.system(size: 50))
+                    .padding(.top,45)
+                Spacer()
+                VStack(spacing: 15){
+                    VStack(alignment: .center, spacing: 30){
+                        VStack(alignment: .center) {
+                            CustomTextfield(placeholder:
+                                                Text("Pseudo"),
+                                            fontName: "RobotoSlab-Light",
+                                            fontSize: 18,
+                                            fontColor: Color.gray,
+                                            username: $username)
+                            Divider()
+                                .background(Color.gray)
+                        }
+                        VStack(alignment: .center) {
+                            CustomSecureField(placeholder:
+                                                Text("Mot de passe"),
+                                              fontName: "RobotoSlab-Light",
+                                              fontSize: 18,
+                                              fontColor: Color.gray,
+                                              password: $password)
+                            Divider()
+                                .background(Color.gray)
+                        }
+                    }
+                    HStack{
+                        Spacer()
+                        Button(action: {}){
+                            Text("Mot de passe oublié ?")
+                                .modifier(CustomTextM(fontName: "RobotoSlab-Light", fontSize: 14, fontColor: Color.gray))
+                        }
+                    }
+                }
+                .padding(.horizontal,35)
+                NavigationLink(destination: HomeScreenView()){
+                    ZStack{
+    //                    if username == username && password == password {
+    //
+    //                    }
+                        Circle()
+                            .foregroundColor(Color.blue)
+                            .frame(width: 60, height: 60)
+                        Image(systemName: "arrow.right")
+                            .font(.title)
+                            .foregroundColor(Color.white)
+                    }
+                    .padding(.top,35)
+                }
+                
+                Spacer()
+                NavigationLink(destination: RegisterView()){
+                    Text("Inscris toi, si tu es nouveau !")
+                        .modifier(CustomTextM(fontName: "RobotoSlab-Light", fontSize: 18, fontColor: Color.blue))
+                }
+                .padding(.bottom,30)
+            }
+        }
     }
 }
 
@@ -22,34 +82,15 @@ struct LoginView_Previews: PreviewProvider {
     }
 }
 
-struct FormBox: View{
-    @State var email:String = ""
-    @State var passeword:String = ""
+struct CustomTextM: ViewModifier {
+    //MARK:- PROPERTIES
+    let fontName: String
+    let fontSize: CGFloat
+    let fontColor: Color
     
-    var body: some View{
-        VStack (alignment: .center, spacing: 15){
-            Text("Email")
-                .font(.callout).bold()
-            TextField("exemple@exemple.com", text: $email)
-                .textFieldStyle(.roundedBorder)
-            Text("Password")
-                .font(.callout).bold()
-            SecureField("password", text: $passeword)
-                .textFieldStyle(.roundedBorder)
-            Text("Mot de passe oublié ?")
-            
-            NavigationLink(destination: HomeScreenView(), label: {
-                Text("Se connecter")
-            })
-                    .buttonStyle(.borderedProminent)
-                        .tint(.black)
-            NavigationLink(destination: RegisterView()){
-                Text("Vous n'avez pas de compte ?")
-            }
-            }
-        .padding(.all, 36)
-        .background(Color(UIColor.systemGray6))
-        .cornerRadius(20)
+    func body(content: Content) -> some View {
+        content
+            .font(.custom(fontName, size: fontSize))
+            .foregroundColor(fontColor)
     }
 }
-
