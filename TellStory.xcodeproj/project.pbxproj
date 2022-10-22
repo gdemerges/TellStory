@@ -15,6 +15,8 @@
 		5787CC972901C4170097AA14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC962901C4170097AA14 /* User.swift */; };
 		5787CC992901C7C10097AA14 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC982901C7C10097AA14 /* HomeScreenView.swift */; };
 		5787CC9B2901C7FB0097AA14 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC9A2901C7FB0097AA14 /* RegisterView.swift */; };
+		57A142AD290478A300427E90 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A142AC290478A300427E90 /* CustomSecureField.swift */; };
+		57A142AF290478C300427E90 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A142AE290478C300427E90 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		5787CC962901C4170097AA14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5787CC982901C7C10097AA14 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		5787CC9A2901C7FB0097AA14 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		57A142AC290478A300427E90 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		57A142AE290478C300427E90 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 		5787CC922901C3840097AA14 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				57A142AC290478A300427E90 /* CustomSecureField.swift */,
+				57A142AE290478C300427E90 /* CustomTextField.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -183,9 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A142AD290478A300427E90 /* CustomSecureField.swift in Sources */,
 				5787CC972901C4170097AA14 /* User.swift in Sources */,
 				5787CC952901C3A20097AA14 /* LoginView.swift in Sources */,
 				5787CC992901C7C10097AA14 /* HomeScreenView.swift in Sources */,
+				57A142AF290478C300427E90 /* CustomTextField.swift in Sources */,
 				5787CC9B2901C7FB0097AA14 /* RegisterView.swift in Sources */,
 				5787CC842901C29E0097AA14 /* ContentView.swift in Sources */,
 				5787CC822901C29E0097AA14 /* TellStoryApp.swift in Sources */,

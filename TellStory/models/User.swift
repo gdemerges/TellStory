@@ -10,7 +10,7 @@ import Foundation
 struct User: Identifiable {
     var id = UUID()
     var mail: String
+    var username: String
     var password: String
-    var pseudo: String
     var image: String
 }
