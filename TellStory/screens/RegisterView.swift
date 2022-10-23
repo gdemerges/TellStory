@@ -11,6 +11,8 @@ struct RegisterView: View {
     @State var username:String = ""
     @State var password:String = ""
     @State var password2: String = ""
+    @State var showError: Bool = false
+    @State var errorMessage: String = ""
     
     var body: some View {
         VStack {
@@ -55,9 +57,6 @@ struct RegisterView: View {
             .padding(.horizontal,35)
             NavigationLink(destination: HomeScreenView()){
                 ZStack{
-//                    if username == username && password == password {
-//
-//                    }
                     Circle()
                         .foregroundColor(Color.blue)
                         .frame(width: 60, height: 60)
@@ -71,6 +70,28 @@ struct RegisterView: View {
         }
         .navigationTitle("Vos informations")
     }
+    
+    func checkSubscription() throws{
+        if password.count < 6 {
+            throw UserError.invalidPassword
+        }else if password != password2 {
+            throw UserError.passwordNotMatching
+        }
+    }
+//    do {
+//    showError = false
+//     try checkSubscription()
+//    } catch {
+//    switch error {
+//    case UserError.invalidPassword:
+//    errorMessage = "Mot de passe invalide (6 caractères min)"
+//    case UserError.passwordsNotMatching:
+//    errorMessage = "Les mots de passe ne correspondent pas"
+//    default:
+//    errorMessage = "Une erreur est survenue"
+//    }
+//    showError = true
+//    }
 }
 
 struct RegisterView_Previews: PreviewProvider {
