@@ -15,10 +15,4 @@ struct User: Identifiable {
     var image: String
 }
 
-enum UserError: Error {
-    case invalidLogin
-    case invalidPassword
-    case passwordNotMatching
-}
-
 

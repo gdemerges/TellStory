@@ -10,6 +10,22 @@ import SwiftUI
 struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
+    @StateObject var viewModelUserView = usersViewModel()
+    @State private var errorMessage = ""
+    @State var isLogged: Bool = false
+    
+    func checkLogin() throws {
+        if username.isEmpty && password.isEmpty{
+            throw UserError.loginPasswordEmpty
+        }
+        else if username != viewModelUserView.user1.username{
+            throw UserError.invalidLogin
+        }else if password != viewModelUserView.user1.password{
+            throw UserError.invalidPassword
+        }else{
+            isLogged = true
+        }
+    }
     
     var body: some View {
         NavigationView{
@@ -50,11 +66,25 @@ struct LoginView: View {
                     }
                 }
                 .padding(.horizontal,35)
-                NavigationLink(destination: HomeScreenView()){
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                Button(action: {
+                    do {
+                        try checkLogin()
+                    } catch {
+                        switch error {
+                        case UserError.loginPasswordEmpty:
+                            errorMessage = "Veuillez saisir votre pseudo et mot de passe"
+                        case UserError.invalidLogin:
+                            errorMessage = "Identifiant invalide"
+                        case UserError.invalidPassword:
+                            errorMessage = "Mot de passe invalide"
+                        default:
+                            errorMessage = "Une erreur est survenue"
+                        }
+                    }
+                }, label: {
                     ZStack{
-    //                    if username == username && password == password {
-    //
-    //                    }
                         Circle()
                             .foregroundColor(Color.blue)
                             .frame(width: 60, height: 60)
@@ -63,8 +93,11 @@ struct LoginView: View {
                             .foregroundColor(Color.white)
                     }
                     .padding(.top,35)
-                }
-                
+                })
+                NavigationLink(destination: HomeScreenView(),isActive: $isLogged, label: {
+                    Text("")
+                })
+
                 Spacer()
                 NavigationLink(destination: RegisterView()){
                     Text("Inscris toi, si tu es nouveau !")
