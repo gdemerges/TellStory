@@ -43,6 +43,7 @@ struct LoginView: View {
                                             fontSize: 18,
                                             fontColor: Color.gray,
                                             username: $username)
+                            .textInputAutocapitalization(.never)
                             Divider()
                                 .background(Color.gray)
                         }

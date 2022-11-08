@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57357863291A962800F20A20 /* StartGameSoloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357862291A962800F20A20 /* StartGameSoloView.swift */; };
+		57357865291A96E400F20A20 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357864291A96E400F20A20 /* Cards.swift */; };
+		57357867291A978D00F20A20 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57357866291A978D00F20A20 /* Theme.swift */; };
 		577893E82907310C007D57AC /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577893E72907310C007D57AC /* UsersViewModel.swift */; };
 		5787CC822901C29E0097AA14 /* TellStoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC812901C29E0097AA14 /* TellStoryApp.swift */; };
 		5787CC842901C29E0097AA14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5787CC832901C29E0097AA14 /* ContentView.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57357862291A962800F20A20 /* StartGameSoloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameSoloView.swift; sourceTree = "<group>"; };
+		57357864291A96E400F20A20 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		57357866291A978D00F20A20 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		577893E72907310C007D57AC /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		5787CC7E2901C29E0097AA14 /* TellStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5787CC812901C29E0097AA14 /* TellStoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellStoryApp.swift; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 			children = (
 				5787CC942901C3A20097AA14 /* LoginView.swift */,
 				5787CC982901C7C10097AA14 /* HomeScreenView.swift */,
+				57357862291A962800F20A20 /* StartGameSoloView.swift */,
 				5787CC9A2901C7FB0097AA14 /* RegisterView.swift */,
 			);
 			path = screens;
@@ -101,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				5787CC962901C4170097AA14 /* User.swift */,
+				57357864291A96E400F20A20 /* Cards.swift */,
+				57357866291A978D00F20A20 /* Theme.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -150,7 +159,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					5787CC7D2901C29E0097AA14 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -194,11 +203,14 @@
 			files = (
 				57A142AD290478A300427E90 /* CustomSecureField.swift in Sources */,
 				5787CC972901C4170097AA14 /* User.swift in Sources */,
+				57357863291A962800F20A20 /* StartGameSoloView.swift in Sources */,
 				5787CC952901C3A20097AA14 /* LoginView.swift in Sources */,
 				5787CC992901C7C10097AA14 /* HomeScreenView.swift in Sources */,
+				57357865291A96E400F20A20 /* Cards.swift in Sources */,
 				57A142AF290478C300427E90 /* CustomTextField.swift in Sources */,
 				5787CC9B2901C7FB0097AA14 /* RegisterView.swift in Sources */,
 				5787CC842901C29E0097AA14 /* ContentView.swift in Sources */,
+				57357867291A978D00F20A20 /* Theme.swift in Sources */,
 				577893E82907310C007D57AC /* UsersViewModel.swift in Sources */,
 				5787CC822901C29E0097AA14 /* TellStoryApp.swift in Sources */,
 			);
@@ -240,6 +252,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -298,6 +311,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -322,8 +336,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TellStory/TellStory.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TellStory/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -358,8 +374,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TellStory/TellStory.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TellStory/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -9,10 +9,25 @@ import SwiftUI
 
 struct RegisterView: View {
     @State var username:String = ""
-    @State var password:String = ""
+    @State var password3:String = ""
     @State var password2: String = ""
     @State var showError: Bool = false
     @State var errorMessage: String = ""
+    @State var isLogged: Bool = false
+    
+    func checkSubscription() throws{
+        if username.isEmpty && password2.isEmpty && password2.isEmpty{
+            throw UserError.loginPasswordEmpty
+        }
+        else if password2 != password3 {
+            throw UserError.passwordNotMatching
+        }
+        else if password2.count < 6 || password2.isEmpty {
+            throw UserError.invalidPassword
+        }else{
+            isLogged = true
+        }
+    }
     
     var body: some View {
         VStack {
@@ -38,7 +53,7 @@ struct RegisterView: View {
                                           fontName: "RobotoSlab-Light",
                                           fontSize: 18,
                                           fontColor: Color.gray,
-                                          password: $password)
+                                          password: $password2)
                         Divider()
                             .background(Color.gray)
                     }
@@ -48,14 +63,31 @@ struct RegisterView: View {
                                           fontName: "RobotoSlab-Light",
                                           fontSize: 18,
                                           fontColor: Color.gray,
-                                          password: $password2)
+                                          password: $password3)
                         Divider()
                             .background(Color.gray)
                     }
                 }
             }
             .padding(.horizontal,35)
-            NavigationLink(destination: HomeScreenView()){
+            Text(errorMessage)
+                .foregroundColor(.red)
+            Button(action: {
+                do {
+                    try checkSubscription()
+                } catch {
+                    switch error {
+                    case UserError.loginPasswordEmpty:
+                        errorMessage = "Veuillez saisir un pseudo et mot de passe"
+                    case UserError.invalidLogin:
+                        errorMessage = "Identifiant invalide"
+                    case UserError.invalidPassword:
+                        errorMessage = "Mot de passe invalide"
+                    default:
+                        errorMessage = "Une erreur est survenue"
+                    }
+                }
+            }, label: {
                 ZStack{
                     Circle()
                         .foregroundColor(Color.blue)
@@ -65,33 +97,15 @@ struct RegisterView: View {
                         .foregroundColor(Color.white)
                 }
                 .padding(.top,35)
-            }
+            })
+            NavigationLink(destination: HomeScreenView(),isActive: $isLogged, label: {
+                Text("")
+            })
+
             Spacer()
         }
         .navigationTitle("Vos informations")
     }
-    
-    func checkSubscription() throws{
-        if password.count < 6 {
-            throw UserError.invalidPassword
-        }else if password != password2 {
-            throw UserError.passwordNotMatching
-        }
-    }
-//    do {
-//    showError = false
-//     try checkSubscription()
-//    } catch {
-//    switch error {
-//    case UserError.invalidPassword:
-//    errorMessage = "Mot de passe invalide (6 caractères min)"
-//    case UserError.passwordsNotMatching:
-//    errorMessage = "Les mots de passe ne correspondent pas"
-//    default:
-//    errorMessage = "Une erreur est survenue"
-//    }
-//    showError = true
-//    }
 }
 
 struct RegisterView_Previews: PreviewProvider {
