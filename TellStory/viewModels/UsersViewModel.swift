@@ -8,7 +8,7 @@
 import Foundation
 
 class usersViewModel: ObservableObject{
-    @Published var user1 = User(mail: "", username: "", password: "", image: "")
+    @Published var user1 = User(mail: "", username: "test", password: "test", image: "")
 }
 
 enum UserError: Error {
